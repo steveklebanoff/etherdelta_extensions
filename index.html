@@ -50,7 +50,7 @@
 
   <p>
     Link To Drag To Bookmarks Bar:
-    <a href='javascript:document.title=jQuery("#tokensDropdown a.dropdown-toggle").text() + " EtherDelta"; false;' id='showPrice'>
+    <a href='javascript:window.setInterval(function() { document.title=jQuery("#tokensDropdown a.dropdown-toggle").text() + " EtherDelta"; }, 1000);' id='showPrice'>
       Set Title</a>
   </p>
 
