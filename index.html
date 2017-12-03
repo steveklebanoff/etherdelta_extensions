@@ -17,19 +17,11 @@
 </script>
 
 <body>
-  <h1>EtherDelta Extensions</h1>
+  <h1>EtherDelta Extension Bookmarklets</h1>
   <p>by Steve Klebanoff</p>
 
   <p>
     All extensions are simple javascript which can be inspected by viewing the link source.  This guarantees there are no exploits or malicious code executed.
-  </p>
-
-  <h3 style='border-bottom: 1px solid black;'>
-    Set token in title bar
-  </h3>
-
-  <p>
-    This will allow you to set the token name in your title bar.
   </p>
 
   <p>
@@ -41,30 +33,36 @@
       Make sure your bookmarks bar is showing your browser.
     </li>
     <li>
-      Drag the "Set Title" link below into your bookmarks bar.
+      Drag the appropriate bookmarket (i.e. "Set Title") link into your bookmarks bar.
     </li>
     <li>
-      Once you have navigated to an EtherDelta page, click the bookmark and watch the title change.
+      Once you have navigated to an EtherDelta page, click the bookmark and watch the functionality work.
     </li>
   </ul>
 
   <p>
-    Link To Drag To Bookmarks Bar:
-    <a href='javascript:window.setEtherDeltaTitle = function() { document.title=jQuery("#tokensDropdown a.dropdown-toggle").text() + " EtherDelta"; }; window.setEtherDeltaTitle(); window.setInterval(window.setEtherDeltaTitle, 1000);' id='showPrice'>
-      Set Title</a>
-  </p>
-
-  <p><strong>Demo:</strong></p>
-  <p>
     <a href="set_link.gif">View demo</a> to see how to setup and use.
   </p>
 
-  <p>
-    <strong>Source Code</strong>
-  </p>
-  <p>
-    <a onClick='showSource("showPrice", "showPriceSource"); return false;' href='#'>View link source</button>
-    <pre id='showPriceSource'></pre>
-  </p>
+  <div class='setLast'>
+    <h3 style='border-bottom: 1px solid black;'>
+      Set last price in title
+    </h3>
+
+    <p>
+      Link To Drag To Bookmarks Bar:
+      <a href='javascript:window.setLastEtherDeltaTitle = function() { document.title = jQuery("#tokensDropdown a.dropdown-toggle").text() + " " + jQuery(jQuery("#trades tr td")[0]).text() }; window.setLastEtherDeltaTitle(); window.setInterval(window.setLastEtherDeltaTitle, 1000);'
+        id='showLast'>
+        Set Last Price</a>
+    </p>
+    
+    <p>
+      <strong>Source Code</strong>
+    </p>
+    <p>
+      <a onClick='showSource("showLast", "showLastSource"); return false;' href='#'>View link source</button>
+        <pre id='showLastSource'></pre>
+    </p>
+  </div>
 </body>
 </html>
